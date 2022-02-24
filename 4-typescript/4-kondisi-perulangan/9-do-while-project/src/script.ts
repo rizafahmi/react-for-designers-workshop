@@ -6,8 +6,12 @@ function randomizeNumber(max: number): number  {
 
 const maxNumber = 10;
 const randomNum = randomizeNumber(maxNumber);
-const guess: number = parseInt(prompt(`Saya memikirkan sebuah angka antara 0 dan ${maxNumber}. Bisa tebak?`));
+let guess: number = 0;
+let count: number = 0;
 
 do {
-  
-} while()
+  guess = parseInt(prompt(`Saya memikirkan sebuah angka antara 0 dan ${maxNumber}. Bisa tebak?`));
+  count += 1;
+} while(guess != randomNum)
+
+alert(`Selamat! Kamu berhasil menebak angka ${randomNum} setelah mencoba sebanyak ${count} kali!`)

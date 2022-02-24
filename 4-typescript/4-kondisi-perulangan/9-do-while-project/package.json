@@ -5,6 +5,7 @@
     "typescript": "^4.3.2"
   },
   "scripts": {
-    "dev": "tsc --watch --preserveWatchOutput"
+    "dev": "tsc --watch --preserveWatchOutput",
+    "build": "tsc"
   }
 }
