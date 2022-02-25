@@ -1,0 +1,23 @@
+{
+  "name": "1-request-callback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "prestart": "tsc --preserveWatchOutput"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/request": "^2.48.8",
+    "@types/request-promise-native": "^1.0.18",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}

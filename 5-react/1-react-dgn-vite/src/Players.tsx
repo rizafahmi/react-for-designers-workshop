@@ -1,15 +1,23 @@
-import './Players.css';
+import React from "react";
 
-import Player from './Player';
+import { PlayerT } from "./lib/types.d";
+import Player from "./Player";
+import "./Players.css";
 
 function Players() {
-    return (
-        <>
-            <Player />
-            <Player />
-            <Player />
-        </>
-    )
+  const players: PlayerT[] = [
+    { name: "Fathurozak Buhari", score: 30 },
+    { name: "Rizki Romadhoni", score: 25 },
+    { name: "Dewi Febriyanti" },
+  ];
+
+  return (
+    <>
+      {players.map((player) => (
+        <Player name={player.name} score={player.score} />
+      ))}
+    </>
+  );
 }
 
-export default Players
+export default Players;
