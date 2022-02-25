@@ -1,17 +1,15 @@
+import './Players.css';
+
 function Players() {
     return (
-        <div>
-            <div>
-                <div>
-                    Fathurozak Buhari
-                </div>
-                <div>
-                    <div>
-                        <button>-</button>
-                        <span>30</span>
-                        <button>+</button>
-                    </div>
-                </div>
+        <div className="player">
+            <div className="name">
+                Fathurozak Buhari
+            </div>
+            <div className="playerScore">
+                <button className="button decrement">-</button>
+                <span className="score">30</span>
+                <button className="button increment">+</button>
             </div>
         </div>
     )
