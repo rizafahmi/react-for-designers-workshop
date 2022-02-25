@@ -9,13 +9,23 @@
 .score {
     @apply p-5 font-semibold text-lg;
 }
+
 button {
     @apply p-3 rounded-md text-slate-50;
 }
+
 button.decrement {
     @apply bg-red-400;
 }
 
 button.increment {
     @apply bg-teal-300;
+}
+
+button.decrement:hover {
+    @apply bg-red-300;
+}
+
+button.increment:hover {
+    @apply bg-teal-200;
 }
