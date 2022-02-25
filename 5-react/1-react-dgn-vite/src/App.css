@@ -1,7 +1,9 @@
 .container {
   padding: 60px;
+  @apply text-slate-600;
 }
 
 h1 {
   text-align: center;
+  @apply text-4xl font-extrabold mb-6 text-slate-700;
 }

@@ -1,26 +1,21 @@
 .player {
-    display: flex;
-    padding: 10px;
+    @apply flex py-2 px-4 my-4 rounded-md border-2;
 }
 .name {
-    flex: 1;
-    align-self: center;
+    @apply flex-1 self-center font-medium;
 }
 .playerScore {
-    width: 200px;
 }
 .score {
-    padding: 20px;
+    @apply p-5 font-semibold text-lg;
 }
 button {
-    padding: 10px;
-    border: 0;
-    border-radius: 4px;
+    @apply p-3 rounded-md text-slate-50;
 }
 button.decrement {
-    background-color: #e97b64;
+    @apply bg-red-400;
 }
 
 button.increment {
-    background-color: #96caef;
+    @apply bg-teal-300;
 }

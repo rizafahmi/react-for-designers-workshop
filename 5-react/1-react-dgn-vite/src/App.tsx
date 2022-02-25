@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="container">
-      <h1>Feedloop Leaderboard</h1>
+      <h1 className="">Feedloop Leaderboard</h1>
       <Players />
     </div>
   )
