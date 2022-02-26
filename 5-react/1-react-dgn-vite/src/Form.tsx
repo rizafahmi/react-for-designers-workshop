@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+
+import './Form.css';
+
+type Prop = {
+  sendData: (name: string) => void
+}
+
+function Form({ sendData }: Prop) {
+  const [name, setName] = useState("")
+  
+  function handleSubmit(event: { preventDefault: () => void; }) {
+    event.preventDefault()
+    sendData(name)
+    setName('')
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="text" 
+        name="name"
+        value={name} 
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Give me some name..." />
+      <button type="submit">Save</button>
+    </form>
+  )
+}
+
+
+
+export default Form;

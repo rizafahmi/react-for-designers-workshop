@@ -4,8 +4,7 @@
 .name {
     @apply flex-1 self-center font-medium;
 }
-.playerScore {
-}
+
 .score {
     @apply p-5 font-semibold text-lg;
 }
