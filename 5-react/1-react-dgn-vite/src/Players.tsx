@@ -6,9 +6,26 @@ import "./Players.css";
 
 type Prop = {
   players: PlayerT[];
+  setPlayers: (PlayerT[]);
 }
 
-function Players({ players }: Prop) {
+function Players({ players, setPlayers }: Prop) {
+
+  function handleIncrement(name: string) {
+    console.log(`Incrementing ${name}`)
+    
+    const updatedPlayers = players.map(function(player) {
+      if(player.name == name) {
+        if(player.score != undefined)
+          player.score = player.score + 10
+        else
+          player.score = 20
+      }
+      return player
+    })
+    
+    setPlayers(updatedPlayers)
+  }
 
   return (
     <>
@@ -17,6 +34,7 @@ function Players({ players }: Prop) {
           key={index} 
           name={player.name} 
           score={player.score}
+          handleIncrement={handleIncrement}
         />
       ))}
     </>

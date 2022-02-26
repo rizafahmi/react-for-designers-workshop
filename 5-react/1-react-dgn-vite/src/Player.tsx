@@ -2,8 +2,7 @@ import React, { useState } from 'react';
   
 import { PlayerT } from './lib/types.d';
 
-function Player({ name, score = 10}: PlayerT) {
-  const [localScore, setLocalScore] = useState(score);
+function Player({ name, score = 10, handleIncrement }: PlayerT) {
 
   return (
     <div className="player">
@@ -11,9 +10,9 @@ function Player({ name, score = 10}: PlayerT) {
         {name}
       </div>
       <div className="playerScore">
-        <button onClick={() => setLocalScore(localScore - 10)} className="button decrement">-</button>
-        <span className="score">{localScore}</span>
-        <button onClick={() => setLocalScore(localScore + 10)} className="button increment">+</button>
+        <button onClick={() => {}} className="button decrement">-</button>
+        <span className="score">{score}</span>
+        <button onClick={() => handleIncrement(name)} className="button increment">+</button>
       </div>
     </div>
   )
