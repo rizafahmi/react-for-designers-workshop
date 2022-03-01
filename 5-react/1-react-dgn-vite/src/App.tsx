@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Players from './Players';
 import Form from './Form';
 import ToggleButton from './ToggleButton';
+import Header from './Header';
 import './App.css';
 
 function App() {
@@ -32,9 +33,13 @@ function App() {
   
   return (
     <div className="container">
-      <h1>Feedloop Leaderboard</h1>
-      <button className="bg-slate-700" onClick={() => setShowForm(!showForm)}>New Player</button>
-      <ToggleButton />
+      <Header>
+        <h1><i>📈</i> Feedloop Leaderboard</h1>
+      </Header>
+      <Header>
+        <button className="bg-slate-700" onClick={() => setShowForm(!showForm)}>New Player</button>
+        <ToggleButton />
+      </Header>
       <Players players={players} 
         /* @ts-ignore */ 
         setPlayers={setPlayers} />
