@@ -1,18 +1,14 @@
-import React from 'react';
-import useTheme, { themes } from './ThemeContext'
+import React, { useContext } from 'react';
+import { ThemeContext } from './ThemeProvider';
 
 function ToggleButton() {
-    const [ theme, setTheme ] = useTheme()
-    function handleToggleButton() {
-        setTheme(theme == themes.light ? themes.dark : themes.light)
-        console.log(theme)
-        document.body.className = theme.background;
-        console.log(theme)
-    }
-
-    return (
-        <button onClick={handleToggleButton} className="bg-slate-800">Toggle Mode</button>
-    )
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button 
+      className="bg-slate-800"
+      onClick={toggleTheme}
+    >Toggle to {theme == 'light' ? 'dark' : 'light'}</button>
+  )
 }
 
-export default ToggleButton
+export default ToggleButton;

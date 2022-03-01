@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import Players from './Players';
 import Form from './Form';
-import { ThemeProvider } from "./ThemeContext";
 import ToggleButton from './ToggleButton';
 import './App.css';
 
@@ -27,21 +26,22 @@ function App() {
 
 
   function sendData(name: string) {
+    // @ts-ignore
     setPlayers([...players, {name}]);
   }
   
   return (
-    <ThemeProvider>
-      <div className="container">
-        <h1>Feedloop Leaderboard</h1>
-        <ToggleButton />
-        <button className="bg-slate-700" onClick={() => setShowForm(!showForm)}>New Player</button>
-        <Players players={players} setPlayers={setPlayers} />
-        {showForm !== true &&
-          <Form sendData={sendData} />
-        }
-      </div>
-    </ThemeProvider>
+    <div className="container">
+      <h1>Feedloop Leaderboard</h1>
+      <button className="bg-slate-700" onClick={() => setShowForm(!showForm)}>New Player</button>
+      <ToggleButton />
+      <Players players={players} 
+        /* @ts-ignore */ 
+        setPlayers={setPlayers} />
+      {showForm !== true &&
+        <Form sendData={sendData} />
+      }
+    </div>
   )
 }
 
