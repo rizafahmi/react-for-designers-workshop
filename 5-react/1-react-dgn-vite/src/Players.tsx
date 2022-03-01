@@ -11,29 +11,31 @@ type Prop = {
 
 function Players({ players, setPlayers }: Prop) {
 
-  function handleIncrement(name: string) {
-    console.log(`Incrementing ${name}`)
+  async function handleIncrement(id: string, score: number) {
+    console.log(`Incrementing ${id}`)
+    try {
+      await fetch(`https://prod-qore-app.qorebase.io/nuMHyithxxHTIVF/allTopScore/rows/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({score: score + 10})
+      });
+    } catch (err) {
+      console.error(err);
+    }
     
-    const updatedPlayers = players.map(function(player) {
-      if(player.name == name) {
-        if(player.score != undefined)
-          player.score = player.score + 10
-        else
-          player.score = 20
-      }
-      return player
-    })
     
-    setPlayers(updatedPlayers)
   }
 
   return (
     <>
-      {players.map((player: PlayerT, index: number) => (
+      {players && players.map((player: PlayerT, index: number) => (
         <Player 
           key={index} 
           name={player.name} 
           score={player.score}
+          id={player.id}
           handleIncrement={handleIncrement}
         />
       ))}

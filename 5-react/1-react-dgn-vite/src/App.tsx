@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Players from './Players';
 import Form from './Form';
@@ -7,12 +7,24 @@ import ToggleButton from './ToggleButton';
 import './App.css';
 
 function App() {
-  const [players, setPlayers] = useState([
-    { name: "Fathurozak Buhari", score: 30 },
-    { name: "Rizki Romadhoni", score: 25 },
-    { name: "Dewi Febriyanti" }
-  ]);
+  const [players, setPlayers] = useState([]);
   const [showForm, setShowForm] = useState(true);
+
+  async function getData() {
+    try {
+      const res = await fetch(`https://prod-qore-app.qorebase.io/nuMHyithxxHTIVF/allTopScore/rows?limit=50&offset=0&$order=asc`)
+      const data = await res.json()
+      setPlayers(data.nodes);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(function() {
+    getData()
+
+  }, [players])
+
 
   function sendData(name: string) {
     setPlayers([...players, {name}]);

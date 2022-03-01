@@ -4,10 +4,10 @@ import { PlayerT } from './lib/types.d';
 import useTheme, { themes } from "./ThemeContext";
 
 type Prop = PlayerT & {
-  handleIncrement: (name: string) => void;
+  handleIncrement: (name: string, score: number) => void;
 }
 
-function Player({ name, score = 10, handleIncrement }: Prop) {
+function Player({ id, name, score = 10, handleIncrement }: Prop) {
   //debugger
   const [theme, setTheme] = useTheme()
 
@@ -19,7 +19,7 @@ function Player({ name, score = 10, handleIncrement }: Prop) {
       <div className="playerScore">
         <button onClick={() => {}} className="button decrement">-</button>
         <span className="score">{score}</span>
-        <button onClick={() => handleIncrement(name)} className="button increment">+</button>
+        <button onClick={() => handleIncrement(id, score)} className="button increment">+</button>
       </div>
     </div>
   )
