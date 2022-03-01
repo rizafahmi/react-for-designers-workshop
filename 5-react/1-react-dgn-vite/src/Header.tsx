@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Header({ children }) {
+type Prop = {
+  children: React.ReactNode
+}
+
+function Header({ children }: Prop) {
   return (
     <header>
       {children}
