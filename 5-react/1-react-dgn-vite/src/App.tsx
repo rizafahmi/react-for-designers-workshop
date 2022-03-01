@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Players from './Players';
 import Form from './Form';
 import { ThemeProvider } from "./ThemeContext";
+import ToggleButton from './ToggleButton';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <ThemeProvider>
       <div className="container">
         <h1>Feedloop Leaderboard</h1>
+        <ToggleButton />
         <Players players={players} setPlayers={setPlayers} />
         <Form sendData={sendData} />
       </div>

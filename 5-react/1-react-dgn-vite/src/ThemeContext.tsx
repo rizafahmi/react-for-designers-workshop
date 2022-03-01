@@ -6,8 +6,8 @@ export const themes = {
       background: "bg-red-100"
     },
     dark: {
-      color: "#ffffff",
-      background: "#222222"
+      color: "text-red-200",
+      background: "bg-slate-800"
     }
 }
 
@@ -34,6 +34,7 @@ const useTheme = () => {
     if (context == undefined) {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
+  console.log(context)
     return [context.theme, context.setTheme];
 };
 
