@@ -1,24 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { defaultTheme } from "../utils/themes";
+import { typeScale } from "../utils/typography";
 
 const Button = styled.button`
   border-radius: 6px;
   padding: 11px 54px;
-  font-familiy: 'Poppins', sans-serif;
+  font-familiy: ${defaultTheme.primaryFont};
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${typeScale.parargraph};
   line-height: 24px;
-`
+  cursor: pointer;
+`;
 
 const PrimaryButton = styled(Button)`
-  background-color: #17C3B2;
+  background-color: ${defaultTheme.primaryColor};
   border: none;
-  color: #FEF9EF;
-`
+  color: ${defaultTheme.textColorOnPrimary};
+  
+  &:hover {
+    background-color: ${defaultTheme.primaryHoverColor}
+  }
+  &:focus {}
+  &:active {}
+  &:disabled {}
+`;
 
 export const SecondaryButton = styled(Button)`
   background: none;
-  border: 2px solid #227C9D;
-  color: #000000;
-`
+  border: 2px solid ${defaultTheme.secondaryColor};
+  color: ${defaultTheme.textColorOnSecondary};
+`;
 
 export default PrimaryButton;
