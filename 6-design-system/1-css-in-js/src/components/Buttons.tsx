@@ -12,7 +12,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
   border: none;
   color: ${defaultTheme.textColorOnPrimary};
@@ -30,5 +30,3 @@ export const SecondaryButton = styled(Button)`
   border: 2px solid ${defaultTheme.secondaryColor};
   color: ${defaultTheme.textColorOnSecondary};
 `;
-
-export default PrimaryButton;
